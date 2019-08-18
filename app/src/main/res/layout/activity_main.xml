@@ -4,15 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvPiTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/subtitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="5dp"
+        android:onClick="calculatePi"
+        android:text="@string/calculate_pi"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@id/tvPi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPi" />
+
+    <TextView
+        android:id="@+id/tvPi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="@dimen/text"
+        app:layout_constraintEnd_toStartOf="@id/btnPi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPiTitle" />
+
+    <TextView
+        android:id="@+id/tvFibTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/_20th_fibonacci_number"
+        android:textSize="@dimen/subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tvPi" />
+
+    <Button
+        android:id="@+id/btnFib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:onClick="getFibonacci"
+        android:text="@string/calculate_fib_20"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@id/tvFib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFib" />
+
+    <TextView
+        android:id="@+id/tvFib"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="@dimen/text"
+        app:layout_constraintEnd_toStartOf="@id/btnFib"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFibTitle" />
+
+    <Button
+        android:id="@+id/btnLoader"
+        android:layout_width="match_parent"
+        android:onClick="viewCelebrities"
+        android:layout_height="wrap_content"
+        android:text="@string/load_celebrities"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

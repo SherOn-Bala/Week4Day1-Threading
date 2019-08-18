@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Week4Day1-Threading</string>
+    <string name="estimate_pi">Estimate π (%.12f)</string>
+    <string name="calculate_pi">Calculate π</string>
+    <string name="calculate_fib_20">Fibonacci #20</string>
+    <string name="_20th_fibonacci_number">20th Fibonacci Number</string>
+    <string name="name">%s, %s</string>
+    <string name="age_d">Age: %d</string>
+    <string name="load_celebrities">Load Celebrities</string>
 </resources>
