@@ -42,7 +42,6 @@ public class LooperThread extends Thread {
     public void run() {
         super.run();
         prepare();
-        loop();
     }
 
     public Handler getWorkerThreadHandler() {

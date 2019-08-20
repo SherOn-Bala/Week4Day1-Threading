@@ -14,18 +14,19 @@ import java.util.Locale;
 
 import ca.judacribz.week4day1_threading.list.ViewCelebrities;
 import ca.judacribz.week4day1_threading.multithreading.LooperThread;
+import ca.judacribz.week4day1_threading.multithreading.RandomNumberTask;
 
 import static ca.judacribz.week4day1_threading.multithreading.LooperThread.EXTRA_FIBONACCI;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RandomNumberTask.SortedListener {
 
     TextView
             tvPiTitle,
             tvPi,
-            tvFib;
-    double actualPi = Math.PI,
-            acceptableDiff = 0.00000000001;
+            tvFib,
+            tvRandom;
+    double actualPi = Math.PI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         ));
         tvPi = findViewById(R.id.tvPi);
         tvFib = findViewById(R.id.tvFib);
+        tvRandom = findViewById(R.id.tvRandom);
     }
 
     public void calculatePi(View view) {
@@ -63,5 +65,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewCelebrities(View view) {
         startActivity(new Intent(this, ViewCelebrities.class));
+    }
+
+    public void sortRandoms(View view) {
+        new RandomNumberTask(this).execute();
+    }
+
+    @Override
+    public void onRandomNumbersSorted(int[] randomNumbers) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int num : randomNumbers) {
+            sb.append(num).append(", ");
+        }
+
+        tvRandom.setText(sb.toString());
     }
 }

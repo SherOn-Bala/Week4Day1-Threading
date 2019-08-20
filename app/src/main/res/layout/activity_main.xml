@@ -11,7 +11,7 @@
         android:id="@+id/tvPiTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/margin"
         android:textSize="@dimen/subtitle"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="@dimen/margin"
         android:onClick="calculatePi"
         android:text="@string/calculate_pi"
         android:textAllCaps="false"
@@ -31,8 +32,9 @@
         android:id="@+id/tvPi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:textSize="@dimen/text"
         app:layout_constraintEnd_toStartOf="@id/btnPi"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +44,8 @@
         android:id="@+id/tvFibTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:text="@string/_20th_fibonacci_number"
         android:textSize="@dimen/subtitle"
         app:layout_constraintTop_toBottomOf="@id/tvPi" />
@@ -51,6 +54,8 @@
         android:id="@+id/btnFib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:layout_marginStart="5dp"
         android:onClick="getFibonacci"
         android:text="@string/calculate_fib_20"
@@ -63,19 +68,51 @@
         android:id="@+id/tvFib"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
         android:textSize="@dimen/text"
         app:layout_constraintEnd_toStartOf="@id/btnFib"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvFibTitle" />
 
     <Button
+        android:id="@+id/btnRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:onClick="sortRandoms"
+        android:text="@string/sort_1000_randoms"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@id/svRandom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/svRandom" />
+
+    <ScrollView
+        android:id="@+id/svRandom"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnLoader"
+        app:layout_constraintEnd_toStartOf="@id/btnRandom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFib">
+
+        <TextView
+            android:id="@+id/tvRandom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text"/>
+    </ScrollView>
+
+    <Button
         android:id="@+id/btnLoader"
         android:layout_width="match_parent"
-        android:onClick="viewCelebrities"
         android:layout_height="wrap_content"
+        android:onClick="viewCelebrities"
+        android:layout_marginTop="@dimen/margin"
         android:text="@string/load_celebrities"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

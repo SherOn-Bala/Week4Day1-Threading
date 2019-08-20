@@ -15,10 +15,11 @@ import java.util.ArrayList;
 
 import ca.judacribz.week4day1_threading.R;
 import ca.judacribz.week4day1_threading.models.Celebrity;
-import ca.judacribz.week4day1_threading.models.CelebrityHelper;
 import ca.judacribz.week4day1_threading.multithreading.DbTaskLoader;
 
-import static ca.judacribz.week4day1_threading.multithreading.DbTaskLoader.CRUD.*;
+import static ca.judacribz.week4day1_threading.multithreading.DbTaskLoader.CRUD.CREATE;
+import static ca.judacribz.week4day1_threading.multithreading.DbTaskLoader.CRUD.DELETE;
+import static ca.judacribz.week4day1_threading.multithreading.DbTaskLoader.CRUD.RETRIEVE;
 
 public class ViewCelebrities extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<ArrayList<Celebrity>>,
@@ -84,7 +85,6 @@ public class ViewCelebrities extends AppCompatActivity implements
 
     @Override
     public void onLoaderReset(@NonNull Loader<ArrayList<Celebrity>> loader) {
-
     }
 
     @Override
